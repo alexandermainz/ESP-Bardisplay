@@ -59,7 +59,7 @@ void setup() {
   tft.setTextSize(2);
   
   tft.drawString("Bardisplay", 160, 40);
-  tft.drawString("Willkommen", 1, 80);
+  tft.drawString("Willkommen", 160, 80);
   delay(100);
 
   // initialisiere Jpeg-Bildanzeige-Bibliothek
@@ -72,11 +72,11 @@ void setup() {
 
   // WiFi verbinden
   initWiFi();
-  tft.drawString("WiFi verbunden!", 1, 120);
+  tft.drawString("WiFi verbunden!", 160, 120);
   IPAddress ip = WiFi.localIP();
   char buf[20];
   sprintf(buf, "%u.%u.%u.%u", ip[0], ip[1], ip[2], ip[3]);
-  tft.drawString(buf, 1, 160);
+  tft.drawString(buf, 160, 160);
 
   // Endpunkte des Webservers definieren
   webserver.on("/", handleRoot);
@@ -91,7 +91,7 @@ void setup() {
   webserver.begin();
   Serial.println("HTTP-Server gestartet");
 
-  tft.drawString("Setup fertig!", 1, 0);
+  tft.drawString("Setup fertig!", 160, 0);
   Serial.println("Setup complete!");
   delay(100);
 }
